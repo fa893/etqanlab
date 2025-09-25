@@ -1,0 +1,621 @@
+:root {
+    --science-blue: #9da4aa;
+    --science-purple: #000000;
+    --science-green: #4CAF50;
+    --science-orange: #ffffff9a;
+    --science-red: #746c6c;
+    --science-yellow: #dbcbd4;
+    --science-teal: #009688;
+    --science-pink: #E91E63;
+    --science-cyan: #00BCD4;
+    --science-indigo: #9ca6e2;
+    --science-lime: #CDDC39;
+    --science-deep-orange: #e7faf69d;
+    --science-brown: #000000;
+    --science-gray: #9E9E9E;
+    --science-blue-gray: #607D8B;
+    
+    --primary: var(--science-blue);
+    --secondary: var(--science-orange);
+    --accent: var(--science-teal);
+    --dark: #696a70;
+    --light: #f5f5f5;
+    --gray: #757575;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--science-purple), var(--science-blue));
+    color: var(--light);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 30px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(157, 151, 151, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--science-red), var(--science-orange), var(--science-yellow), var(--science-green), var(--science-blue), var(--science-purple));
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.logo-icon {
+    font-size: 2.5rem;
+    color: var(--science-yellow);
+    margin-left: 15px;
+    background: linear-gradient(45deg, var(--science-red), var(--science-orange), var(--science-yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, var(--science-yellow), var(--science-green), var(--science-cyan));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.engineer-name {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: var(--science-yellow);
+    font-weight: bold;
+}
+
+/* Category Filters */
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.category-btn {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-btn:hover, .category-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.category-btn.physics { border-left: 4px solid var(--science-blue); }
+.category-btn.chemistry { border-left: 4px solid var(--science-green); }
+.category-btn.biology { border-left: 4px solid var(--science-red); }
+.category-btn.engineering { border-left: 4px solid var(--science-orange); }
+.category-btn.astronomy { border-left: 4px solid var(--science-purple); }
+.category-btn.math { border-left: 4px solid var(--science-pink); }
+.category-btn.earth { border-left: 4px solid var(--science-brown); }
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Experiments List */
+.experiments-list {
+    flex: 1;
+    min-width: 320px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 800px;
+    overflow-y: auto;
+}
+
+.experiments-list h2 {
+    margin-bottom: 25px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.8rem;
+    color: var(--science-yellow);
+}
+
+.search-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px 45px 12px 15px;
+    border-radius: 50px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--light);
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+}
+
+.experiment-item {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.experiment-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+}
+
+.experiment-item.physics::before { background: var(--science-blue); }
+.experiment-item.chemistry::before { background: var(--science-green); }
+.experiment-item.biology::before { background: var(--science-red); }
+.experiment-item.engineering::before { background: var(--science-orange); }
+.experiment-item.astronomy::before { background: var(--science-purple); }
+.experiment-item.math::before { background: var(--science-pink); }
+.experiment-item.earth::before { background: var(--science-brown); }
+
+.experiment-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.experiment-item.active {
+    background: rgba(255, 171, 0, 0.2);
+    border: 1px solid var(--science-yellow);
+}
+
+.experiment-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    font-size: 1.5rem;
+}
+
+.experiment-item.physics .experiment-icon { background: rgba(33, 150, 243, 0.2); color: var(--science-blue); }
+.experiment-item.chemistry .experiment-icon { background: rgba(76, 175, 80, 0.2); color: var(--science-green); }
+.experiment-item.biology .experiment-icon { background: rgba(244, 67, 54, 0.2); color: var(--science-red); }
+.experiment-item.engineering .experiment-icon { background: rgba(255, 152, 0, 0.2); color: var(--science-orange); }
+.experiment-item.astronomy .experiment-icon { background: rgba(156, 39, 176, 0.2); color: var(--science-purple); }
+.experiment-item.math .experiment-icon { background: rgba(233, 30, 99, 0.2); color: var(--science-pink); }
+.experiment-item.earth .experiment-icon { background: rgba(121, 85, 72, 0.2); color: var(--science-brown); }
+
+.experiment-content {
+    flex: 1;
+}
+
+.experiment-item h3 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.experiment-item p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.experiment-meta {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.experiment-meta span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+/* Experiment View */
+.experiment-view {
+    flex: 2;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.experiment-view h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.8rem;
+    color: var(--science-yellow);
+}
+
+.experiment-display {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.experiment-display iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+.placeholder-experiment {
+    text-align: center;
+    padding: 30px;
+    color: var(--gray);
+}
+
+.placeholder-experiment i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--science-cyan);
+}
+
+.experiment-info {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.experiment-info h3 {
+    margin-bottom: 15px;
+    color: var(--science-yellow);
+    font-size: 1.4rem;
+}
+
+.experiment-info p {
+    line-height: 1.8;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+button {
+    background: linear-gradient(90deg, var(--science-orange), var(--science-yellow));
+    color: var(--dark);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(123, 119, 112, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(250, 250, 250, 0.4);
+}
+
+button:disabled {
+    background: rgba(109, 103, 94, 0.5);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+button i {
+    margin: 0 5px;
+}
+
+#fullscreen-btn {
+    margin-top: 15px;
+    background: linear-gradient(90deg, var(--science-blue), var(--science-cyan));
+    color: white;
+    font-size: 0.95rem;
+}
+
+.launch-btn {
+    background: linear-gradient(90deg, var(--science-green), var(--science-cyan));
+    width: 100%;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Shapes and Decorations */
+.science-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.1;
+}
+
+.shape-1 {
+    top: 10%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--science-red);
+}
+
+.shape-2 {
+    top: 70%;
+    right: 10%;
+    width: 150px;
+    height: 150px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    background: var(--science-blue);
+}
+
+.shape-3 {
+    bottom: 20%;
+    left: 15%;
+    width: 80px;
+    height: 80px;
+    background: var(--science-green);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.shape-4 {
+    top: 30%;
+    right: 20%;
+    width: 120px;
+    height: 120px;
+    background: var(--science-yellow);
+    transform: rotate(45deg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .logo-icon {
+        font-size: 2rem;
+    }
+    
+    .experiments-list, .experiment-view {
+        padding: 20px 15px;
+    }
+    
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .categories {
+        gap: 10px;
+    }
+    
+    .category-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating {
+    animation: float 5s ease-in-out infinite;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--science-yellow);
+    animation: spin 1s ease-in-out infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.page-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.page-btn.active {
+    background: var(--science-yellow);
+    color: var(--dark);
+}
+
+.page-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.page-info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Scrollbar Styling */
+.experiments-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.experiments-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.experiments-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.experiments-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}

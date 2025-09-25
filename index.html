@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتقان - منصة التجارب العلمية والمحاكاة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="science-shapes">
+        <div class="shape shape-1 floating" style="animation-delay: 0s;"></div>
+        <div class="shape shape-2 floating" style="animation-delay: 1s;"></div>
+        <div class="shape shape-3 floating" style="animation-delay: 2s;"></div>
+        <div class="shape shape-4 floating" style="animation-delay: 3s;"></div>
+    </div>
+    
+    <div class="container">
+        <header class="fade-in">
+            <div class="logo">
+                <i class="logo-icon fas fa-atom"></i>
+                <h1>اتقان</h1>
+            </div>
+            <p class="subtitle">منصة التجارب العلمية والمحاكاة التفاعلية - استكشف وتعلم بطريقة مبتكرة</p>
+            <p class="engineer-name">تصميم وتطوير: المهندس فرحان الخوالدة</p>
+        </header>
+        
+        <div class="categories fade-in">
+            <button class="category-btn physics active" data-category="all">
+                <i class="fas fa-atom"></i> الكل
+            </button>
+            <button class="category-btn physics" data-category="physics">
+                <i class="fas fa-bolt"></i> الفيزياء
+            </button>
+            <button class="category-btn chemistry" data-category="chemistry">
+                <i class="fas fa-flask"></i> الكيمياء
+            </button>
+            <button class="category-btn biology" data-category="biology">
+                <i class="fas fa-dna"></i> الأحياء
+            </button>
+            <button class="category-btn math" data-category="math">
+                <i class="fas fa-calculator"></i> الرياضيات
+            </button>
+            <button class="category-btn earth" data-category="earth">
+                <i class="fas fa-globe-americas"></i> علوم الأرض
+            </button>
+        </div>
+        
+        <div class="main-content">
+            <div class="experiments-list fade-in">
+                <h2><i class="fas fa-list-alt"></i> قائمة التجارب</h2>
+                
+                <div class="search-box">
+                    <input type="text" placeholder="ابحث عن تجربة...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <div id="experiments-container">
+                    </div>
+                
+                <div class="pagination" id="pagination">
+                    </div>
+                
+                <div class="page-info" id="page-info">
+                    </div>
+            </div>
+            
+            <div class="experiment-view fade-in">
+                <h2><i class="fas fa-desktop"></i> عرض التجربة</h2>
+                
+                <div class="experiment-display">
+                    <div class="placeholder-experiment">
+                        <i class="fas fa-flask"></i>
+                        <h3>مرحبًا في منصة اتقان</h3>
+                        <p>اختر تجربة من القائمة لبدء رحلة الاستكشاف العلمي</p>
+                    </div>
+                    <div class="loading-spinner"></div>
+                    <iframe id="experiment-frame" style="display: none;"></iframe>
+                </div>
+                
+                <button id="fullscreen-btn">
+                    <i class="fas fa-expand"></i> ملء الشاشة
+                </button>
+                
+                <div class="experiment-info">
+                    <h3>معلومات عن التجربة</h3>
+                    <p id="experiment-description">
+                        منصة "اتقان" تقدم مجموعة من التجارب العلمية التفاعلية المصممة لتعزيز فهمك للمبادئ العلمية الأساسية. اختر أي تجربة من القائمة لبدء رحلة التعلم.
+                    </p>
+                </div>
+                
+                <div class="controls">
+                    <button id="prev-btn" disabled>
+                        <i class="fas fa-arrow-right"></i> التجربة السابقة
+                    </button>
+                    <button id="next-btn">
+                        التجربة التالية <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                
+                <button class="launch-btn" id="launch-btn">
+                    <i class="fas fa-rocket"></i> تشغيل التجربة في صفحة جديدة
+                </button>
+            </div>
+        </div>
+        
+        <footer class="fade-in">
+            <p>جميع الحقوق محفوظة &copy; 2023 - منصة اتقان | تصميم وتطوير: المهندس فرحان الخوالدة</p>
+            <p>التجارب مقدمة من <a href="https://phet.colorado.edu" target="_blank" style="color: var(--science-yellow);">PhET Interactive Simulations</a></p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
